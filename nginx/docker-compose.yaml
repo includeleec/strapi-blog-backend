@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  nginx-lb:
+    container_name: mydocker_con
+    build: .
+    image: mydocker:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - ./cert:/etc/nginx/cert
