@@ -3,7 +3,7 @@ version: "2.0"
 services:
 
   strapi:
-    image: leec121/strapi-v4-pg:blog
+    image: leec121/strapi-blog:0.1
     expose:
       - port: 1337
         as: 80
@@ -12,23 +12,16 @@ services:
         accept:
           - strapi.icp123.org
 
-
-
-
-
 profiles:
   compute:
     strapi-profile:
       resources:
         cpu:
-          units: 1
+          units: 2
         memory:
-          size: 1Gi
+          size: 4Gi
         storage:
           size: 2Gi
-
-
-
 
   placement:
     akash:
